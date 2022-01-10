@@ -73,7 +73,7 @@ export class AppComponent {
 
   private validAttributes(control: AbstractControl): ValidationErrors | null {
     const element = control.get('element')?.value
-    const intelligence = control.get('inteligente')?.value
+    const intelligence = control.get('intelligence')?.value
     const wisdow = control.get('wisdow')?.value
 
     if (element == 'fire' && intelligence < 60) {

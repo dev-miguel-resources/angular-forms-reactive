@@ -62,6 +62,42 @@
           <option value="100" label="100"></option>
         </datalist>
       </div>
+      <div>
+        Wisdow
+        <input
+          class="form-field"
+          type="range"
+          list="wisdow-ticks"
+          min="50"
+          max="100"
+          formControlName="wisdow"
+        />
+        <datalist id="wisdow-ticks">
+          <option value="50" label="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100" label="100"></option>
+        </datalist>
+      </div>
+      <div>
+        <button class="button" type="submit" [disabled]="magicianForm.invalid">
+          Submit
+        </button>
+      </div>
+      <div *ngIf="magicianForm.errors?.['invalidFire']" class="error">
+        Fire Magician must have at least 60 Intelligence
+      </div>
+      <div *ngIf="magicianForm.errors?.['invalidIce']" class="error">
+        Ice Magician must have at least 75 Intelligence
+      </div>
+      <div *ngIf="magicianForm.errors?.['invalidWater']" class="error">
+        Wather Magician must have at least 65 Wisdow
+      </div>
+      <div *ngIf="magicianForm.errors?.['invalidThunder']" class="error">
+        Thunder Magician must have at least 80 Wisdow
+      </div>
     </div>
   </form>
 </div>
